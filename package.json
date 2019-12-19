@@ -1,0 +1,39 @@
+{
+  "name": "express-es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --colors --config   ./webpack.config.js ",
+    "debug": "./node_modules/.bin/babel-node  ./ --inspect --debug-brk --source-maps --nolazy ./start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "art-template": "^4.13.2",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1",
+    "module-alias": "^2.2.2",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.6",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "uglifyjs-webpack-plugin": "1.0.0",
+    "webpack": "^2.6.1",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-sources": "^1.1.0",
+    "write-file-webpack-plugin": "^4.5.0"
+  }
+}

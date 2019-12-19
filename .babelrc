@@ -1,0 +1,22 @@
+{
+    "presets": [
+        "env",
+        "stage-2"
+    ],
+    //"plugins": ["transform-runtime"],
+    // "plugins": [
+    //     ["transform-runtime",{
+    //         "helpers":false,
+    //         "polyfill":true,
+    //         "regenerator":true,
+    //         "moduleName":"babel-runtime",
+    //     }]
+    // ],
+    "comments": false,
+    "env": {
+        "debug": {
+            "sourceMaps": "inline",
+            "retainLines": true
+        }
+    }
+}
