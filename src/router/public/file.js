@@ -12,5 +12,4 @@ router.get('/', async (req, res, next) => {
         name:"name"+fileService.getFile()
     }))
 })
-
 export default router;

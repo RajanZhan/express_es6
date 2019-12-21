@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*":["src/*"],
+            "@utils": [
+                "src/utils"
+            ],
+            "@entity": [
+                "src/entity"
+            ],
+            "@service": [
+                "src/service"
+            ],
+            "@router": [
+                "src/router"
+            ],
+            "@config": [
+                "src/config"
+            ],
+            "@middle": [
+                "src/middle"
+            ]
+            
+        },
+        "target": "ES6",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "src/**/*",
+        "src/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

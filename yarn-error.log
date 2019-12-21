@@ -1,0 +1,78 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bodyParser --save
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;d:\Program Files\Git\cmd;D:\Program Files\Redis\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Program Files\Java\jdk1.8.0_201\jre\bin;D:\opencv\build;D:\ProgramApps\ffmpeg\bin;D:\ProgramApps\nvm-noinstall;D:\ProgramApps\nvm-noinstall\nvm;C:\Program Files\nodejs;D:\ProgramApps\echosite;D:\ProgramApps\imgMerg;D:\ProgramData\Anaconda3;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;D:\ProgramApps\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;D:\ProgramApps\ffmpeg\bin;D:\ProgramApps\nvm-noinstall\nvm;C:\Program Files\nodejs;d:\Program Files (x86)\Egret\Egret Wing 3\bin;d:\Program Files\JetBrains\PyCharm Community Edition 2019.2.3\bin;
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npmjs.org/bodyParser: Not found
+      at Request.params.callback [as _callback] (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66830:18)
+      at Request.self.callback (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140464:22)
+      at Request.emit (events.js:189:13)
+      at Request.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141436:10)
+      at Request.emit (events.js:189:13)
+      at IncomingMessage.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141358:12)
+      at Object.onceWrapper (events.js:277:13)
+      at IncomingMessage.emit (events.js:194:15)
+      at endReadableNT (_stream_readable.js:1103:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "express-es6",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "babel-build": "./node_modules/.bin/babel  index.js --out-file index.bin.js",
+      "build": "webpack --progress --colors --config   ./webpack.config.js ",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "art-template": "^4.13.2",
+      "babel-polyfill": "^6.26.0",
+      "body-parser": "^1.19.0",
+      "colors": "^1.4.0",
+      "express": "^4.17.1",
+      "express-art-template": "^1.0.1",
+      "magic-oopjs": "^1.0.1",
+      "module-alias": "^2.2.2",
+      "save-dev": "0.0.1-security"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.7.4",
+      "@babel/core": "^7.7.5",
+      "@babel/node": "^7.7.7",
+      "@babel/preset-env": "^7.4.5",
+      "@babel/preset-stage-0": "^7.0.0",
+      "@babel/runtime": "^7.0.0-beta.46",
+      "babel-core": "^7.0.0-bridge.0",
+      "babel-loader": "^7.0.6",
+      "copy-webpack-plugin": "^4.6.0",
+      "uglifyjs-webpack-plugin": "1.0.0",
+      "webpack": "^2.6.1",
+      "webpack-cli": "^2.0.14",
+      "webpack-dev-middleware": "^2.0.4",
+      "webpack-dev-server": "^2.4.5",
+      "webpack-hot-middleware": "^2.18.0",
+      "webpack-sources": "^1.1.0",
+      "write-file-webpack-plugin": "^4.5.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

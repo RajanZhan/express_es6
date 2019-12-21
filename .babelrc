@@ -1,17 +1,22 @@
 {
     "presets": [
-        "env",
-        "stage-2"
+        "@babel/preset-env",
     ],
-    //"plugins": ["transform-runtime"],
-    // "plugins": [
-    //     ["transform-runtime",{
-    //         "helpers":false,
-    //         "polyfill":true,
-    //         "regenerator":true,
-    //         "moduleName":"babel-runtime",
-    //     }]
-    // ],
+    "plugins": [
+        "@babel/plugin-transform-runtime",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-class-properties",
+            {
+                "loose": true
+            }
+        ]
+    ],
     "comments": false,
     "env": {
         "debug": {

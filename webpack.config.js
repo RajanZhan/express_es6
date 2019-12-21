@@ -1,7 +1,7 @@
 var webpcak = require('webpack');
 const fs = require("fs");
 const path = require("path");
-const config = require("./config/config");
+const config = require("./src/config/config");
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var nodeModules = {};
@@ -30,32 +30,16 @@ nodeModules["class-validator"] = "commonjs class-validator";
 nodeModules["class-transformer"] = "commonjs class-transformer";
 nodeModules["@nestjs/microservices"] = "commonjs    @nestjs/microservices";
 nodeModules["module-alias"] = "commonjs module-alias";
-
-let ignoreMudles = {
-    "ali-oss": "^5.2.0",
-    "art-template": "^3.0.3",
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.9",
-    "express": "^4.16.3",
-    "jsonminify": "^0.4.1",
-    "log4js": "^2.7.0",
-    "moment": "^2.22.1",
-    "mosca": "^2.8.3",
-    "mqtt": "^2.18.3",
-    "qr-image": "^3.2.0",
-    "rajan-datamodel": "^1.0.1",
-    "redis": "^2.8.0",
-    "request": "^2.88.0",
-    "socket.io": "^2.1.1",
-    "svg-captcha": "^1.3.11",
-    "ueditor": "^1.2.3",
-    "uuid": "^3.2.1",
-    "vant": "^1.1.7",
-    "vue-resource": "^1.5.1",
-
-    "ws": "^6.0.0"
-}
+nodeModules["@babel/runtime/helpers/interopRequireDefault"] = "commonjs @babel/runtime/helpers/interopRequireDefault";
+nodeModules["@babel/runtime/helpers/classCallCheck"] = "commonjs @babel/runtime/helpers/classCallCheck";
+nodeModules["@babel/runtime/helpers/createClass"] = "commonjs @babel/runtime/helpers/createClass";
+nodeModules["@babel/runtime/helpers/regenerator"] = "commonjs @babel/runtime/helpers/regenerator";
+nodeModules["@babel/runtime/helpers/asyncToGenerator"] = "commonjs @babel/runtime/helpers/asyncToGenerator";
+nodeModules["@babel/runtime/regenerator"] = "commonjs @babel/runtime/regenerator";
+nodeModules["@babel/runtime/helpers/applyDecoratedDescriptor"] = "commonjs @babel/runtime/helpers/applyDecoratedDescriptor";
+nodeModules["@babel/runtime/helpers/initializerDefineProperty"] = "commonjs @babel/runtime/helpers/initializerDefineProperty";
+nodeModules["@babel/runtime/helpers/initializerWarningHelper"] = "commonjs @babel/runtime/helpers/initializerWarningHelper";
+nodeModules["@babel/runtime/helpers/defineProperty"] = "commonjs @babel/runtime/helpers/defineProperty";
 // for (let i in ignoreMudles) {
 // nodeModules[i] = "commonjs " + i;
 // }
@@ -71,10 +55,22 @@ const baseDevPath = './dist/'; //编译的目标路径
 const baseSrcDevPath = path.join(__dirname, `./dist/`) // 源代码的路径
 
 
+// 处理编译时的文件路径别名
+var _moduleAliases = {};
+if (config.alias._moduleAliases) {
+    for (let i in config.alias._moduleAliases) {
+        if (config.alias._moduleAliases[i]) {
+            _moduleAliases[i] = config.alias._moduleAliases[i].replace(/src/g, '.dist');
+        }
+    }
+}
+
+
+
 module.exports = {
     entry: [
         "babel-polyfill",
-        './index.js'
+        './src/index.js'
     ],
     output: {
         path: path.resolve(__dirname, baseDevPath + '/'),
@@ -117,18 +113,18 @@ module.exports = {
     //处理模块资源
     module: {
         rules: [{ //处理js文件
-                test: /\.js$/,
-                use: [{
-                    loader: "babel-loader",
-                    options: {
-                        //使用env预设来处理es6语法的js文件
-                        //presets: ['env']
-                    }
-                }],
-                exclude: [
-                    path.resolve(__dirname, './node_modules')
-                ]
-            },
+            test: /\.js$/,
+            use: [{
+                loader: "babel-loader",
+                options: {
+                    //使用env预设来处理es6语法的js文件
+                    //presets: ['env']
+                }
+            }],
+            exclude: [
+                path.resolve(__dirname, './node_modules')
+            ]
+        },
 
         ]
     }
